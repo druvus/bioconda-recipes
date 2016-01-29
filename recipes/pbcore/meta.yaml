@@ -1,0 +1,83 @@
+package:
+  name: pbcore
+  version: "1.2.7"
+
+source:
+  fn: pbcore-1.2.7.tar.gz
+  url: https://pypi.python.org/packages/source/p/pbcore/pbcore-1.2.7.tar.gz
+  md5: e601ad27bac0eb185ef704fdbfbe3a91
+  patches:
+   # List any patch files here
+    - setup.patch
+
+build:
+  skip: True # [not py27]
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pbcore = pbcore:main
+    #
+    # Would create an entry point called pbcore that calls pbcore.main()
+
+    - .open = pbcore.io.opener:entryPoint
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - cython
+    - numpy >=1.7.1
+    - h5py >=2.0.1
+    - pysam >=0.8.4
+
+  run:
+    - python
+    - cython
+    - numpy >=1.7.1
+    - h5py >=2.0.1
+    - pysam >=0.8.4
+
+test:
+  # Python imports
+  imports:
+    - pbcore
+    - pbcore.chemistry
+    - pbcore.data
+    - pbcore.data.datasets
+    - pbcore.io
+    - pbcore.io.align
+    - pbcore.io.dataset
+    - pbcore.model
+    - pbcore.util
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    # - .open --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - nose
+    - sphinx
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  #home: The package home page
+  license: Custom
+  license_file: LICENSES.txt
+  summary: 'A Python library for reading and writing PacBio® data files'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

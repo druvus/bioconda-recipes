@@ -1,0 +1,11 @@
+--- setup.py	2015-12-10 17:13:57.000000000 +0100
++++ setup_new.py	2016-01-29 15:48:51.435679333 +0100
+@@ -51,6 +51,6 @@
+     zip_safe = False,
+     entry_points = { "console_scripts" : [ ".open = pbcore.io.opener:entryPoint" ] },
+     scripts=['bin/dataset.py'],
+-    install_requires=_get_local_requirements(_REQUIREMENTS_FILE),
+-    tests_require=_get_local_requirements(_REQUIREMENTS_TEST_FILE)
++ #   install_requires=_get_local_requirements(_REQUIREMENTS_FILE),
++ #   tests_require=_get_local_requirements(_REQUIREMENTS_TEST_FILE)
+ )
