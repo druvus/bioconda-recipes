@@ -1,0 +1,29 @@
+package:
+  name: orfm
+  version: "0.5.3"
+
+build:
+  number: 0
+
+source:
+  fn: orfm_v0.5.3.tar.gz
+  url: https://github.com/wwood/OrfM/archive/v0.5.3.tar.gz
+  md5: 4310068135499f3f5e02cd1a29c59710
+
+requirements:
+  build:
+  - gcc
+
+  run:
+  - libgcc
+
+test:
+  commands:
+    - orfm -h 2>&1
+
+about:
+  home: https://github.com/wwood/OrfM
+  license: GPL3
+  license_file: LICENSE.txt
+  summary: OrfM is a simple and not slow ORF caller
+
