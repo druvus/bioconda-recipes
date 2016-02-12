@@ -1,0 +1,36 @@
+package:
+  name: fermikit
+  version: "0.13"
+
+build:
+  number: 0
+
+source:
+  fn: fermikit_v0.13.tar.gz
+  url: https://github.com/lh3/fermikit/archive/v0.13.tar.gz
+  md5: bfc903b587af783812bee8795bdea1fd
+
+requirements:
+  build:
+  - gcc
+
+  run:
+  - libgcc
+  - perl-threaded
+  - bfc
+  - bwa
+  - fermi2
+  - hapdip
+  - htsbox
+  - ropebwt2
+  - seqtk
+
+test:
+  commands:
+    - run-calling  2>&1 | grep Usage > /dev/null
+
+about:
+  home: https://github.com/lh3/fermikit
+  license: Unknown
+  summary: De novo assembly based variant calling pipeline for Illumina short reads
+
