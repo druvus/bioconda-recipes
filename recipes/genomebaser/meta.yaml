@@ -38,6 +38,10 @@ requirements:
     - python
     - biopython
     - click
+    - cd-hit
+    - prokka
+    - blast
+
 
 test:
   # Python imports
