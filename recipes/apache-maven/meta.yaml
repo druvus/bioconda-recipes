@@ -1,0 +1,29 @@
+package:
+  name: apache-maven
+  version: "3.3.9"
+
+build:
+  number: 0
+
+source:
+  fn: apache-maven-3.3.9-bin.tar.gz
+  url: http://apache.mirrors.spacedump.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+  md5: 516923b3955b6035ba6b0a5b031fbd8b
+
+requirements:
+  build:
+    - java-jdk
+    - ant 
+
+  run:
+    - java-jdk
+
+test:
+  commands:
+    - mvn --version # 2>&1 | grep k-spectrum > /dev/null
+
+about:
+  home: https://maven.apache.org
+  license: Apache
+  summary: Apache Maven is a software project management and comprehension tool.
+
