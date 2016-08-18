@@ -1,31 +1,32 @@
 package:
   name: links
-  version: "1.5.2"
+  version: "1.8.3"
 
 source:
-  fn: links_v1-5-2.tar.gz
-  url: http://www.bcgsc.ca/platform/bioinfo/software/links/releases/1.5.2/links_v1-5-2.tar.gz
-  md5: 8ba3933b9e37c7d3712b2c690056545f
+  fn: links_v1-8-3.tar.gz
+  url: http://www.bcgsc.ca/platform/bioinfo/software/links/releases/1.8.3/links_v1-8-3.tar.gz
+  md5: feb3f14ee3442f298c82d88251175cf3
 
   patches:
     - links.patch
 
 build:
   number: 0
-  skip: False
+  skip: True # [osx]
 
 requirements:
   build:
     - perl-threaded
-    - perl-bloom-faster
+    - swig
+    - gcc
 
   run:
     - perl-threaded
-    - perl-bloom-faster
+    - libgcc
 
 test:
   commands:
-    - LINKS  | grep 'Usage' > /dev/null
+    - LINKS #  | grep 'Usage' > /dev/null
 
 about:
   summary: Long Interval Nucleotide K-mer Scaffolder
