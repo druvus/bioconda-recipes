@@ -1,11 +1,11 @@
 package:
   name: gseapy
-  version: "0.4.2"
+  version: "0.5.3"
 
 source:
-  fn: gseapy-0.4.2.zip
-  url: https://pypi.python.org/packages/source/g/gseapy/gseapy-0.4.2.zip
-  md5: 912ed61ef134569899a5044fd48099ae
+  fn: gseapy-0.5.3.zip
+  url: https://pypi.python.org/packages/c2/e0/55fc4969f0fe0b38fd0600594685df5e1675be6ca97f22d7a52e39a4bd88/gseapy-0.5.3.zip
+  md5: 6a555d99378cac57bb8850d5420cf229
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -35,6 +35,7 @@ requirements:
     - pandas >=0.16
     - matplotlib >=1.4.3
     - beautifulsoup4 >=4.4.1
+    - requests
 
   run:
     - python
@@ -42,6 +43,7 @@ requirements:
     - pandas >=0.16
     - matplotlib >=1.4.3
     - beautifulsoup4 >=4.4.1
+    - requests
 
 test:
   # Python imports
