@@ -20,7 +20,7 @@ requirements:
 
   run:
     - perl-threaded
-    - perl-bloomfilter
+    - perl-btl_bloomfilter
 
 test:
   commands:
