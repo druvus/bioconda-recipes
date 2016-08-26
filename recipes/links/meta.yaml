@@ -17,16 +17,14 @@ build:
 requirements:
   build:
     - perl-threaded
-    - swig
-    - gcc
 
   run:
     - perl-threaded
-    - libgcc
+    - perl-bloomfilter
 
 test:
   commands:
-    - LINKS #  | grep 'Usage' > /dev/null
+    - LINKS   | grep 'Usage' > /dev/null
 
 about:
   summary: Long Interval Nucleotide K-mer Scaffolder
