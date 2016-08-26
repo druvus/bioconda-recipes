@@ -1,9 +1,18 @@
---- LINKS   2016-08-18 14:57:46.596126197 +0200
-+++ LINKS       2016-08-18 14:58:01.884447221 +0200
+--- LINKS.bak   2016-08-26 21:55:05.000000000 +0200
++++ LINKS       2016-08-26 21:55:43.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!/usr/bin/env perl
 
  #AUTHOR
  #   Rene Warren
-
+@@ -23,8 +23,7 @@
+ use strict;
+ use POSIX;
+ use FindBin;
+-use lib "$FindBin::Bin/./lib/bloomfilter/swig";
+-use BloomFilter;
++use BTL::BloomFilter;
+ use Time::HiRes;
+ use Getopt::Std;
+ use Net::SMTP;
