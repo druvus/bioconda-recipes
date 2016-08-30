@@ -1,33 +1,47 @@
 package:
-    name: poretools
-    version: "0.5.1"
+  name: poretools
+  version: "0.6.0"
 source:
-    git_url: https://github.com/arq5x/poretools
+  fn: poretools-0.6.0.tar.gz
+  url: https://pypi.python.org/packages/57/28/b680b8515e4d02b583211c2287fd9e49700dc6cfa0b2b6d6a11f54d0b8a1/poretools-0.6.0.tar.gz
+  md5: 8bc38dd5a08f9b34ec4ef19a6805f6fd
 
 requirements:
-    build:
-        - python
-        - watchdog >=0.8.3
-        - rpy2 >=2.4.2
-        - h5py >=2.0
+  build:
+    - python
+    - setuptools
+    - h5py >=2.2.0
+    - matplotlib
+    - seaborn
+    - pandas
+    - python
+    - setuptools
+    - h5py >=2.2.0
+    - matplotlib
+    - seaborn
+    - pandas
 
-    run:
-        - python
-        - hdf5 >=1.8.7
-        - r >=3.0.0
-        - rpy2 >=2.4.2
-        - h5py >=2.0
-        - watchdog >=0.8.3
-        - qcli >=0.1.1
+  run:
+    - python
+    - h5py >=2.2.0
+    - matplotlib
+    - seaborn
+    - pandas
 
 build:
-    skip: True # [not py27 or osx]
+  skip: True # [not py27 or osx]
 
 test:
-    commands:
-        - poretools -v
+  imports:
+    - poretools
+    - poretools.scripts
+
+  commands:
+    - poretools --help
+
 
 about:
-    home: http://poretools.readthedocs.org/en/latest/
-    summary: "poretools: a toolkit for working with nanopore sequencing data from Oxford Nanopore"
+  home: http://poretools.readthedocs.org/
+  summary: "poretools: a toolkit for working with nanopore sequencing data from Oxford Nanopore"
+  license: GNU General Public License (GPL)
 
