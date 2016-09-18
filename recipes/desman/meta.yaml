@@ -1,0 +1,38 @@
+package:
+  name: desman
+  version: "0.1dev"
+
+source:
+  fn: desman-0.1dev.tar.gz
+  url: https://github.com/chrisquince/DESMAN/archive/0538d8cf80eed77e505ea54ad2ac663e6c65c90c.tar.gz
+  md5: 86afb32956a0317facaaf4b4a173a457
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - numpy >=1.7.1
+    - cython >=0.19.1
+    - pandas >=0.11.0
+    - gsl
+
+  run:
+    - python
+    - numpy >=1.7.1
+    - cython >=0.19.1
+    - pandas >=0.11.0
+    - gsl
+
+test:
+  imports:
+    - desman
+  commands:
+    - desman
+
+about:
+  home: https://github.com/chrisquince/DESMAN
+  license: BSD
+  summary: 'De novo Extraction of Strains from MetAgeNomes'
+  license_file: MIT
