@@ -1,0 +1,42 @@
+{% set version = "1.0.0" %}
+
+package:
+  name: ls-bsr
+  version: {{ version }}
+
+
+source:
+  fn: ls-bsr-{{ version }}.tar.gz
+  url: https://github.com/druvus/LS-BSR/archive/de6e7749100b7f95e87d6d168965315edaac2951.tar.gz
+  md5: 70af42af88c3b70a4fec07fc544d6201
+
+build:
+  number: 0
+  skip: True # [not py27]
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - biopython 
+    - vsearch
+    - cd-hit
+    - blast
+    - blat
+    - prodigal
+    - numpy
+test:
+  imports:
+    - ls_bsr
+    - igs
+  commands:
+    - ls_bsr.py | grep 'Usage'
+
+about:
+  home: https://github.com/jasonsahl/LS-BSR
+  license: GPLv3
+  summary: 'Large scale Blast Score Ratio (BSR) analysis'
+  license_file: license.txt
