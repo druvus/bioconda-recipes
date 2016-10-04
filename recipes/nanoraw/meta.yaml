@@ -1,0 +1,51 @@
+{% set name = "nanoraw" %}
+{% set version = "0.1a1" %}
+
+package:
+    name: {{ name|lower }}
+    version: {{ version }}
+source:
+    fn: {{ name|lower }}_{{ version }}.tar.gz
+    url: https://github.com/marcus1487/nanoraw/archive/f4476ca8ddd4067303043b821e6fe6bb314ee083.tar.gz
+    md5: a6961b9701c470d11d0df8c130301411
+
+requirements:
+    build:
+        - python
+        - setuptools
+        - h5py
+        - rpy2
+        - numpy
+        - r
+        - r-ggplot2
+        - hdf5
+        - graphmap
+
+    run:
+    build:
+        - python
+        - setuptools
+        - h5py
+        - rpy2
+        - numpy
+        - r
+        - r-ggplot2
+        - hdf5
+        - graphmap
+        - nose
+
+build:
+    number: 0
+
+test:
+    requires:
+        - nose
+
+    imports: 
+        - nanoraw
+
+about:
+    home: https://github.com/marcus1487/nanoraw
+    summary: Correcting and analyzing raw nanopore sequencing data.
+    license: Unknown
+
