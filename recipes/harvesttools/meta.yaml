@@ -1,0 +1,35 @@
+package:
+  name: harvesttools
+  version: "1.2"
+
+build:
+  number: 0
+
+source:
+  fn: harvesttools_v1.2.tar.gz
+  url: https://github.com/marbl/harvest-tools/archive/v1.2.tar.gz
+  md5: 4e27e06681dffae59fb64d613808d4bc
+
+requirements:
+  build:
+    - autoconf
+    - zlib
+    - gcc   # [not osx]
+    - llvm  # [osx]
+    - protobuf
+    - capnproto 
+
+  run:
+    - libgcc
+    - zlib
+
+test:
+  commands:
+    - harvesttools -h 2>&1 | grep harvesttools > /dev/null
+
+about:
+  home: http://harvest.readthedocs.org/
+  license: Custom
+  license_file: LICENSE.txt
+  summary: HarvestTools is a utility for creating and interfacing with Gingr files.
+
