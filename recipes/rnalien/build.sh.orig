@@ -1,4 +1,8 @@
 #!/bin/bash
+<<<<<<< HEAD
+stack setup
+stack build
+=======
 export LIBRARY_PATH="${PREFIX}/lib"
 export LD_LIBRARY_PATH="${PREFIX}/lib"
 export LDFLAGS="-L${PREFIX}/lib"
@@ -9,3 +13,4 @@ stack update
 stack install --extra-include-dirs ${PREFIX}/include --local-bin-path ${PREFIX}/bin
 #cleanup
 rm -r .stack-work
+>>>>>>> upstream/master
