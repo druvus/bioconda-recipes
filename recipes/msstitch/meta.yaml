@@ -9,6 +9,7 @@ source:
 
 build:
   skip: True # [py2k]
+  number: 1
   entry_points:
     - msspercolator=app.pycolator:main
     - msslookup=app.mslookup:main
@@ -30,6 +31,8 @@ requirements:
     - lxml
     - biopython
     - pyyaml
+    ## can be removed if the upstream package includes libgcc at some point
+    - libgcc
 
 test:
   imports:
