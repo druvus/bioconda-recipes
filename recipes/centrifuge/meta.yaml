@@ -1,0 +1,35 @@
+{% set name = "centrifuge" %}
+{% set version = "1.0.1.a1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 1
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/infphilo/centrifuge/archive/ecc3ece9db8a0f5dac1e248f76e1987e1b02908e.tar.gz
+  md5: 438463b8bab5e474814875c5241549a6
+
+
+requirements:
+  build:
+    - gcc   # [not osx]
+    - llvm  # [osx]
+    - zlib
+    - python 
+  run:
+    - libgcc [not osx]
+    - zlib
+
+test:
+  commands:
+    - centrifuge
+
+about:
+  home: https://github.com/infphilo/centrifuge
+  license: GPL3
+  license_file: LICENCE
+  summary: 'Classifier for metagenomic sequences.'
