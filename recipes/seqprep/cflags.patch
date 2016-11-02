@@ -1,9 +1,8 @@
---- Makefile	2013-05-31 17:44:45.000000000 +0000
-+++ Makefile.new	2015-11-12 19:07:34.066685982 +0000
-@@ -1,8 +1,8 @@
- CC=gcc
--CFLAGS=-c -Wall -Werror -O0 -g
-+CFLAGS=-c -Wall -O0 -g -I${PREFIX}/include
+--- Makefile    2016-11-02 18:39:15.000000000 +0100
++++ Makefile    2016-11-02 18:40:37.000000000 +0100
+@@ -1,7 +1,7 @@
+-CFLAGS=-c -Wall -O0 -g -std=c99
++CFLAGS=-c -Wall -O0 -g -std=c99 -I${PREFIX}/include
  #recommended options: -ffast-math -ftree-vectorize -march=core2 -mssse3 -O3
 -COPTS=
 -LDFLAGS=-lz -lm

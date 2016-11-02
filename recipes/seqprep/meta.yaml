@@ -1,26 +1,34 @@
-build:
-  number: 0
-  skip: True # [osx]
-
 package:
   name: seqprep
-  version: 1.1
+  version: 1.2
 
 source:
-  fn: v1.1.tar.gz
-  url: https://github.com/jstjohn/SeqPrep/archive/v1.1.tar.gz
-  md5: 42bd8e62e8bf99befb37ed29ce047115
+  fn: v1.2.tar.gz
+  url: https://github.com/jstjohn/SeqPrep/archive/v1.2.tar.gz
+  md5: 7501064b519b6e17b2a6c39ec0a03b2d
 
   patches:
     - cflags.patch
 
+build:
+  number: 0
+
 requirements:
   build:
+    - gcc   # [not osx]
+    - llvm  # [osx]
     - zlib
+
   run:
     - zlib
+    - libgcc    # [not osx]
+
+test:
+  commands:
+    - SeqPrep  2>&1 | grep Usage > /dev/null
 
 about:
   home: https://github.com/jstjohn/SeqPrep
+  summary: Tool for stripping adaptors and/or merging paired reads with overlap into single reads.
   license: MIT
 
