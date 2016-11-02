@@ -8,11 +8,11 @@ mv `ls | grep -v ncbi` ./ncbi/.;
 # edit make targets to disable X11 (keep copy for debug)
 for f in ./ncbi/platform/*.mk; do
   # disable OPENGL dependent make targets
-  sed -i '.ori' 's/#set HAVE_OGL=0/set HAVE_OGL=0/' $f;
+  sed -i.ori 's/#set HAVE_OGL=0/set HAVE_OGL=0/' $f;
   # disable MOTIF make target
-  sed -i '' 's/#set HAVE_MOTIF=0/set HAVE_MOTIF=0/' $f;
+  sed -i 's/#set HAVE_MOTIF=0/set HAVE_MOTIF=0/' $f;
   # reduce compilation warnings
-  sed -i '' 's/NCBI_CC = gcc/NCBI_CC = gcc -Wcpp -Wimplicit-int -Wimplicit-function-declaration -Wincompatible-pointer-types /' $f;
+  sed -i 's/NCBI_CC = gcc/NCBI_CC = gcc -Wcpp -Wimplicit-int -Wimplicit-function-declaration -Wincompatible-pointer-types /' $f;
 done
 
 # run compilation (populates './ncbi/build/')
