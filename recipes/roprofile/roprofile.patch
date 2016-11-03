@@ -1,0 +1,14 @@
+--- roProfile.py        2016-11-03 20:03:37.697700673 +0000
++++ roProfile.py        2016-11-03 20:04:11.567534263 +0000
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python
+ '''
+ Generation of pan-genome profile files using Roary output.
+
+@@ -462,4 +463,4 @@
+
+
+ if __name__ == "__main__":
+-    main()
+\ No newline at end of file
++    main()
