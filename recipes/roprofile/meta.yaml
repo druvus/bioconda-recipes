@@ -31,6 +31,6 @@ test:
     - roprofile.py --version
 
 about:
-  home: https://github.com/isovic/graphmap
+  home: https://github.com/cimendes/roProfile
   license: GPLv3
   summary: 'Generation of pan-genome profile files using Roary output.'
