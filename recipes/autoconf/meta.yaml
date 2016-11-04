@@ -13,7 +13,6 @@ build:
 requirements:
   build:
     - m4
-    - pkginfo
     - perl-threaded
 
   run:
