@@ -395,7 +395,7 @@ recipes/bioconductor-mmdiff
 
 
 # TODO: depends on r-blockmodeling which has some gfortran issues
-recipes/bioconductor-ebseq
+#recipes/bioconductor-ebseq
 
 
 recipes/bioconductor-fourcseq
