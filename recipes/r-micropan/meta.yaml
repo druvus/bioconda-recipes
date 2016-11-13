@@ -1,0 +1,60 @@
+package:
+  name: r-micropan
+  version: "1.0"
+
+source:
+  fn: micropan_1.0.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/micropan_1.0.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/micropan/micropan_1.0.tar.gz
+  md5: 417abd274d10ed96405692f2feb1df3b
+
+build:
+  # This is required to make R link correctly on Linux.
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+
+requirements:
+  build:
+    - r
+    - r-igraph
+
+  run:
+    - r
+    - r-igraph
+
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('micropan')"
+
+about:
+  #home:
+  license: GPL-2
+  summary: A collection of functions for computations and visualizations of microbial pan-genomes.
+  license_family: GPL2
+
+# The original CRAN metadata for this package was:
+
+# Package: micropan
+# Type: Package
+# Title: Microbial Pan-genome Analysis
+# Version: 1.0
+# Date: 2014-09-03
+# Author: Lars Snipen and Kristian Hovde Liland
+# Maintainer: Lars Snipen <lars.snipen@nmbu.no>
+# Description: A collection of functions for computations and visualizations of microbial pan-genomes.
+# Depends: R (>= 2.15.0), igraph
+# License: GPL-2
+# LazyData: FALSE
+# ZipData: TRUE
+# Packaged: 2014-09-09 09:30:39 UTC; larssn
+# NeedsCompilation: no
+# Repository: CRAN
+# Date/Publication: 2014-09-09 14:18:33
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
