@@ -1,0 +1,41 @@
+{% set name = "python-genomicconsensus" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/PacificBiosciences/GenomicConsensus/archive/1.0.0.tar.gz
+  md5: e78170019cae6554fd5c693323e32605
+
+build:
+  skip: True # [not py27]
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - h5py >=2.0.1
+    - numpy >=1.6.0
+    - python-consensuscore >=1.0.1
+    - pbcommand >=0.3.20
+    - pbcore >=1.2.9
+
+  run:
+    - python
+    - h5py >=2.0.1
+    - numpy >=1.6.0
+    - python-consensuscore >=1.0.1
+    - pbcommand >=0.3.20
+    - pbcore >=1.2.9
+
+test:
+  commands:
+    - variantCaller
+
+about:
+  home: https://github.com/PacificBiosciences/GenomicConsensus
+  license: BSD-3-Clause
+  summary: 'PacBio variant and consensus caller'
