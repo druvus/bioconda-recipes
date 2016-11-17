@@ -1,0 +1,34 @@
+{% set name = "bandage" %}
+{% set version = "0.8.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/rrwick/Bandage/archive/v0.8.0.tar.gz
+  md5: 7c1de895198197612e566327625d8557
+
+requirements:
+  build:
+  - qt >=5
+  - gcc # [not osx]
+  - llvm # [osx]
+
+  run:
+  - qt >=5
+  - libgcc [not osx]
+
+test:
+  commands:
+    - Bandage --version
+
+about:
+  home: https://github.com/rrwick/Bandage
+  license: GPLv3
+  license_file: COPYING
+  summary: 'A Bioinformatics Application for Navigating De novo Assembly Graphs Easily'
