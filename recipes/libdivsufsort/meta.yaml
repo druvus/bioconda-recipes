@@ -17,12 +17,15 @@ requirements:
   build:
   - cmake
   - gcc # [not osx]
-  - llvm # [osx]c
+  - llvm # [osx]
 
   run:
   - libgcc [not osx]
 
 test:
+  requires:
+    - gcc # [not osx]
+    - llvm # [osx]
   files:
       test.c
   commands:
