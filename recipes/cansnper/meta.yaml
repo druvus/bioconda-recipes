@@ -20,12 +20,14 @@ requirements:
   - setuptools
   - ete2
   - numpy
+  - pyqt <5
 
   run:
   - python
   - setuptools
   - ete2
   - numpy
+  - pyqt <5
 
 test:
   commands:
