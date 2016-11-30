@@ -1,2 +1,4 @@
 recipes/vsearch
 recipes/mysqlclient
+recipes/dsrc
+recipes/nudup
