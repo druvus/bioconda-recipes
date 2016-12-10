@@ -1,0 +1,39 @@
+{% set name = "discosnp" %}
+{% set version = "2.2.10" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/GATB/DiscoSnp/releases/download/v{{ version }}/DiscoSNP.-v{{ version }}-Source.tar.gz
+  md5: a5590184534e387a21cd35630dc09529
+
+requirements:
+  build:
+  - gcc   # [not osx]
+  - llvm  # [osx]
+  - cmake
+  - perl-threaded
+  - python
+  - zlib
+
+  run:
+  - libgcc [not osx]
+  - perl-threaded
+  - python
+  - zlib
+
+test:
+  commands:
+    - run_discoSnp++.sh -h
+
+about:
+  home: https://gatb.inria.fr/software/discosnp/
+  license: APGL-3.0
+  summary: 'DiscoSnp is designed for discovering all kinds of SNPs (not only isolated ones), as well as insertions and deletions, from raw set(s) of reads.'
+
