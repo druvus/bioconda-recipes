@@ -19,6 +19,7 @@ requirements:
     - gcc  # [not osx]
     - llvm  # [osx]
     - autoconf
+    - automake 
 
   run:
     - libgcc   # [not osx]

@@ -10,7 +10,7 @@ tar -xvf seqtk.tar.gz -C seqtk --strip-components 1
 cd ..
 
 mkdir -p $PREFIX/bin
-./autogen.sh
+autoreconf --install
 ./configure
 make
 mv orfm  $PREFIX/bin
