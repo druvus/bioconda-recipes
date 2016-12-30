@@ -1,19 +1,16 @@
-{% set name = "trinity" %}
-{% set version = "2.3.2" %}
-
-package:
-  name: {{ name|lower }}
-  version: {{ version }}
+about:
+  home: https://github.com/trinityrnaseq/trinityrnaseq/
+  license: ''
+  summary: 'Trinity RNA-Seq de novo transcriptome assembly'
 
 build:
-  number: 0
+  number: 5
+  skip: True # [osx]
 
-source:
-  fn: {{ name|lower }}_{{ version }}.tar.gz
-  url: https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v{{ version }}.tar.gz
-  patches:
-    - makefile.clean.patch
-    - trinity-plugins.makefile.clean.patch
+
+package:
+  name: trinity
+  version: '2.2.0'
 
 requirements:
   build:
@@ -31,7 +28,6 @@ requirements:
     - fastool
     - parafly
     - slclust
-
   run:
     - perl-app-cpanminus
     - perl-module-build
@@ -47,6 +43,13 @@ requirements:
     - parafly
     - slclust
 
+source:
+  fn: trinity-2.2.0.tar.gz
+  url: https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz
+  patches:
+    - makefile.clean.patch
+    - trinity-plugins.makefile.clean.patch
+
 test:
     commands:
         - "Trinity --cite &> /dev/null"
@@ -57,9 +60,4 @@ test:
         - "PtR --help &> /dev/null || [[ \"$?\" == 255 ]]"
         - "TrinityStats.pl 2>&1 | grep \"usage:\" &> /dev/null"
         - "define_clusters_by_cutting_tree.pl 2>&1 | grep \"define K clusters via k-means algorithm\" &> /dev/null"
-
-about:
-  home: https://github.com/trinityrnaseq/trinityrnaseq/
-  license: 'BSD-3-Clause'
-  summary: 'Trinity RNA-Seq de novo transcriptome assembly'
 
