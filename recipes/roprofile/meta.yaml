@@ -1,4 +1,4 @@
-{% set name = "roprofile.py" %}
+{% set name = "roprofile" %}
 {% set version = "1.4.5" %}
 
 package:
