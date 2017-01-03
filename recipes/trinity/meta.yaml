@@ -17,7 +17,6 @@ source:
 
 requirements:
   build:
-    - libgcc
     - gcc
     - perl-app-cpanminus
     - perl-module-build
@@ -48,10 +47,11 @@ requirements:
     - fastool
     - parafly
     - slclust
+    - libgcc
 
 test:
     commands:
-        - "Trinity --cite &> /dev/null"
+        - "Trinity --cite"
         - "align_and_estimate_abundance.pl --help &> /dev/null || [[ \"$?\" == 255 ]]"
         - "abundance_estimates_to_matrix.pl --help &> /dev/null || [[ \"$?\" == 255 ]]"
         - "run_DE_analysis.pl -h &> /dev/null || [[ \"$?\" == 255 ]]"
