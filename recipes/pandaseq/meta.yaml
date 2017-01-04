@@ -3,8 +3,7 @@ package:
   version: "2.10"
 
 build:
-  number: 0
-  skip: True # [not osx]
+  number: 1
 
 source:
   fn: pandaseq_v2.10.tar.gz
@@ -14,19 +13,20 @@ source:
 requirements:
   build:
   - perl-threaded
-  - gcc [linux]
-  - llvm [osx]
+  - gcc  # [not osx]
+  - llvm  # [osx]
   - autoconf
+  - automake
   - zlib
   - pkg-config
   - libtool
 
   run:
-  - libgcc [linux]
+  - libgcc  # [not osx]
 
 test:
   commands:
-    - pandaseq -h 2>&1 | grep 'Usage' > /dev/null
+    - pandaseq -h 2>&1 | grep 'Usage'
 
 about:
   home: https://github.com/neufeld/pandaseq
