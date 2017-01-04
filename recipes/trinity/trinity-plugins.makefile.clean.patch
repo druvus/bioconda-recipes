@@ -25,7 +25,7 @@
  #	tar xjvf htslib-1.2.1.tar.bz2
  #	cd htslib-1.2.1 && ./configure && $(MAKE)
 -	tar xvf ${HTSLIB_CODE} && cd htslib && $(MAKE)
-+        tar xvf ${HTSLIB_CODE} && sed -i 's/CPPFLAGS =/#CPPFLAGS =/' htslib/Makefile && cd htslib && $(MAKE)
++	tar xvf ${HTSLIB_CODE} && sed -i 's/CPPFLAGS =/#CPPFLAGS =/' htslib/Makefile && cd htslib && $(MAKE)
  
  scaffold_iworm_contigs_target: htslib_target
  	cd scaffold_iworm_contigs && $(MAKE)
@@ -34,7 +34,7 @@
  
  parafly_target:
 -	cd ${PARAFLY_CODE} && sh ./configure --prefix=`pwd` && $(MAKE) install
-+        cd ${PARAFLY_CODE} && sh ./configure --prefix=`pwd` CC=${PREFIX}/bin/gcc $(INCHWORM_CONFIGURE_FLAGS) CXX=${PREFIX}/bin/g++ CFLAGS="-fopenmp" CXXFLAGS="-fopenmp" && $(MAKE) install
++	cd ${PARAFLY_CODE} && sh ./configure --prefix=`pwd` CC=${PREFIX}/bin/gcc $(INCHWORM_CONFIGURE_FLAGS) CXX=${PREFIX}/bin/g++ CFLAGS="-fopenmp" CXXFLAGS="-fopenmp" && $(MAKE) install
  	ln -sf ${PARAFLY_CODE} parafly
  
  
