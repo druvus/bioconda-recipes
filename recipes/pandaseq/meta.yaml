@@ -20,7 +20,8 @@ requirements:
   - zlib
   - pkg-config
   - libtool
-
+  - bzip2
+  
   run:
   - libgcc  # [not osx]
 
