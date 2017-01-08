@@ -1,0 +1,47 @@
+package:
+  name: biolite
+  version: "0.5.0"
+
+source:
+  fn: biolite-0.5.0.tar.gz
+  url: https://pypi.python.org/packages/73/f4/3fa1c8ac0f75d32b0e4aa39c274ee6a2463c3d07c060ab0bedad2971f81e/biolite-0.5.0.tar.gz
+  md5: c5f6e5dbbeb608d7f6ac376593c4810b
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - biopython >=1.60
+    - dendropy >=3.12.0
+    - docutils >=0.9.1
+    - lxml >=3.2.1
+    - matplotlib >=1.1.0
+    - networkx >=1.6
+    - numpy >=1.6.1
+    - gnu-wget
+
+  run:
+    - python
+    - biopython >=1.60
+    - dendropy >=3.12.0
+    - docutils >=0.9.1
+    - lxml >=3.2.1
+    - matplotlib >=1.1.0
+    - networkx >=1.6
+    - numpy >=1.6.1
+    - gnu-wget
+
+test:
+  imports:
+    - biolite
+    - biolite.workflows
+
+about:
+  home: https://bitbucket.org/caseywdunn/biolite
+  license: GNU General Public License v3 (GPLv3)
+  summary: 'A lightweight bioinformatics framework with automated tracking of diagnostics and provenance.'
+  license_family: Public-Domain
+
