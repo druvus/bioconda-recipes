@@ -28,7 +28,7 @@ requirements:
 test:
   commands:
     - centrifuge --help
-
+    - centrifuge-kreport --help
 about:
   home: https://github.com/infphilo/centrifuge
   license: GPL3
