@@ -1,0 +1,34 @@
+{% set name = "bloomfiltertrie" %}
+{% set version = "0.8.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/GuillaumeHolley/BloomFilterTrie/archive/{{ version }}.tar.gz
+  md5: 33f84d0cff01d4601a95efae8893e2b9
+
+requirements:
+  build:
+  - gcc 
+  - jemalloc
+  - judy 
+
+  run:
+  - libgcc
+
+test:
+  commands:
+    - bft --version
+
+about:
+  home: https://github.com/GuillaumeHolley/BloomFilterTrie
+  license: GPLv3
+  license_file: LICENSE
+  summary: "An alignment-free, reference-free and incremental data structure for colored de Bruijn graph with application to pan-genome indexing."
+
