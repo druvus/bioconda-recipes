@@ -7,3 +7,5 @@ mkdir -p $PREFIX/bin
 
 make
 make install prefix=$PREFIX
+
+cp centrifuge-kreport $PREFIX/bin
