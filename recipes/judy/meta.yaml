@@ -1,0 +1,37 @@
+{% set name = "judy" %}
+{% set version = "1.05" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: http://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz
+  md5: 115a0d26302676e962ae2f70ec484a54
+
+requirements:
+  build:
+  - gcc # [not osx]
+  - llvm # [osx]
+  - jemalloc
+
+  run:
+  - libgcc # [not osx]
+
+test:
+  requires:
+    - gcc
+  files:
+    - test.c
+  commands:
+    - gcc -I ${PREFIX}/include -L ${PREFIX}/lib  test.c
+
+about:
+  home: http://judy.sourceforge.net/
+  license: GPLv2
+  license_file: COPYING
+  summary: Judy is a C library that provides a state-of-the-art core technology that implements a sparse dynamic array. 
