@@ -28,8 +28,11 @@ requirements:
     - python
 
 test:
+  requires:
+    - perl  
   commands:
     - centrifuge --help
+    - centrifuge-kreport
 
 about:
   home: https://github.com/infphilo/centrifuge
