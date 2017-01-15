@@ -24,8 +24,7 @@ requirements:
 
 test:
   commands:
-    - test -e $(dirname $(which conda))/../lib/libJudy.dylib # [osx]
-    - test -e $(dirname $(which conda))/../lib/libJudy.so # [not osx]
+    - test -e ${PREFIX}/lib/libJudy.la
 
 about:
   home: http://judy.sourceforge.net/
