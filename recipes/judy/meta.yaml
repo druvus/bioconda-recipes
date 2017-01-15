@@ -23,12 +23,9 @@ requirements:
   - libgcc # [not osx]
 
 test:
-  requires:
-    - gcc
-  files:
-    - test.c
   commands:
-    - gcc -I ${PREFIX}/include -L ${PREFIX}/lib  test.c
+    - test -e ${PREFIX}/lib/libJudy.dylib # [osx]
+    - test -e ${PREFIX}/lib/libJudy.so # [not osx]
 
 about:
   home: http://judy.sourceforge.net/
