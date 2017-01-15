@@ -18,11 +18,13 @@ requirements:
     - gcc   # [not osx]
     - llvm  # [osx]
     - zlib
-    - python 
+    - perl
+    - python
+ 
   run:
     - libgcc  # [not osx]
     - zlib
-    - perl-threaded
+    - perl
     - python
 
 test:
