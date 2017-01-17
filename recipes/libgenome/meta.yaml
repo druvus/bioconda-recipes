@@ -1,0 +1,35 @@
+{% set name = "libgenome" %}
+{% set version = "1.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+source:
+  fn: {{ name|lower }}_{{ version }}.zip
+  url: https://sourceforge.net/code-snapshots/svn/m/ma/mauve/code/mauve-code-4736-libGenome-trunk.zip
+  md5: 3d83cd7851bd8967f46b3efaf20b260a
+
+requirements:
+  build:
+  - gcc  # [not osx]
+  - llvm  # [osx]
+  - autoconf 
+  - automake
+  - perl
+  - libtool
+
+  run:
+  - libgcc  # [not osx]
+
+test:
+  commands:
+    - ls $PREFIX/lib/libGenome-1.3.la | grep libGenome
+    - test -e $PREFIX/lib/libGenome-1.3.la
+about:
+  home: http://darlinglab.org/mauve/
+  license: GPLv2
+  summary: libGenome header files.
