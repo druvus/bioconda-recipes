@@ -31,6 +31,6 @@ test:
 
 about:
   home: https://www.libssh2.org/
-  summary: libssh2 is a client-side C library implementing the SSH2 protocol
+  summary: 'libssh2 is a client-side C library implementing the SSH2 protocol'
   license: Custom OSS
   license_file: COPYING
