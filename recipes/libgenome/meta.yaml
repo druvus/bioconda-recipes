@@ -10,8 +10,8 @@ build:
 
 source:
   fn: {{ name|lower }}_{{ version }}.zip
-  url: https://sourceforge.net/code-snapshots/svn/m/ma/mauve/code/mauve-code-4736-libGenome-trunk.zip
-  md5: 3d83cd7851bd8967f46b3efaf20b260a
+  url: https://github.com/druvus/mauve_snapshot/raw/master/mauve-code-4736-libGenome-trunk.zip
+  md5: ebe9c42963c09626821cb4e30398f3d2
 
 requirements:
   build:
