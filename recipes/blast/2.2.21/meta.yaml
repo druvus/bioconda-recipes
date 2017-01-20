@@ -14,13 +14,13 @@ source:
         - update_blastdb.pl.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
     run:
         - perl
         - libgcc    # [not osx]
-
+        - zlib
 test:
     commands:
         - blastdb_aliastool -version > /dev/null
