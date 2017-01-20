@@ -21,7 +21,7 @@ requirements:
         - perl
         - libgcc    # [not osx]
         - zlib
-        - bzip
+        - bzip2
 
 test:
     commands:
