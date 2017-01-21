@@ -40,7 +40,7 @@ make install
 
 
 #mauvealigner
-cd ../mauvealigner
+cd ../mauveAligner
 sed -i.bak 's|-static||g' configure.ac 
 mkdir -p config
 autoreconf --force --install -I config
