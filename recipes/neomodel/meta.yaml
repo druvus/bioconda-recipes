@@ -1,0 +1,39 @@
+package:
+  name: neomodel
+  version: "3.0.3"
+
+source:
+  fn: neomodel-3.0.3.tar.gz
+  url: https://pypi.python.org/packages/0c/a2/d290b4cf6cfa18f92bebc9abc109c96cc268b70ab2af786092196c1e4a64/neomodel-3.0.3.tar.gz
+  md5: ee019013218552da8458009c369e6d60
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - neo4j-driver >=1.0.2
+    - pytz >=2016
+
+  run:
+    - python
+    - neo4j-driver >=1.0.2
+    - pytz >=2016
+
+test:
+  imports:
+    - neomodel
+    - neomodel.contrib
+    - test
+    - test.test_contrib
+
+  requires:
+    - nose ==1.3.7
+
+about:
+  home: http://github.com/robinedwards/neomodel
+  license: MIT License
+  summary: 'An object mapper for the neo4j graph database.'
+  license_family: MIT
