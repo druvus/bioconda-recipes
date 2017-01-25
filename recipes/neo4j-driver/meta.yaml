@@ -1,0 +1,33 @@
+package:
+  name: neo4j-driver
+  version: "1.1.0"
+
+source:
+  fn: neo4j-driver-1.1.0.tar.gz
+  url: https://pypi.python.org/packages/7c/7d/043e6338301d6d3bf6d24428628d5fcf490a40ad8bf9e9ea2b0d1b948d8e/neo4j-driver-1.1.0.tar.gz
+  md5: 4fb0938b86bdf28b52ae7bfb37565911
+
+# build:
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - neo4j
+    - neo4j.bolt
+    - neo4j.compat
+    - neo4j.v1
+
+about:
+  home: https://github.com/neo4j/neo4j-python-driver
+  license: Apache Software License
+  summary: 'Neo4j Bolt driver for Python'
+  license_family: Apache
+
