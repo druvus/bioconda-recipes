@@ -15,10 +15,14 @@ requirements:
     - bioconductor-graph
     - r
     - gcc
+    - graphviz
+
   run:
     - bioconductor-graph
     - r
     - libgcc
+    - graphviz
+
 test:
   commands:
     - '$R -e "library(''Rgraphviz'')"'

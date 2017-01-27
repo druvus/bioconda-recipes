@@ -6,7 +6,8 @@
 mv DESCRIPTION DESCRIPTION.old
 grep -v '^Priority: ' DESCRIPTION.old > DESCRIPTION
 #
-$R CMD INSTALL --build .
+export LD_LIBRARY_PATH=${PREFIX}/graphviz
+$R CMD INSTALL --build  .
 #
 # # Add more build steps here, if they are necessary.
 #
