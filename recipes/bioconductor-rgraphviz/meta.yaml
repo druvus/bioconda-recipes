@@ -7,7 +7,6 @@ source:
   md5: 7cc78d664091137d805709970cb00879
 build:
   number: 0
-  skip: True  # [osx]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -15,10 +14,12 @@ requirements:
   build:
     - bioconductor-graph
     - r
-    - gcc  # [linux]
+    - gcc  # [not osx]
+    - llvm  # [osx]
   run:
     - bioconductor-graph
     - r
+    - libgcc  # [not osx]
 test:
   commands:
     - '$R -e "library(''Rgraphviz'')"'
