@@ -1,10 +1,10 @@
 package:
   name: bioconductor-rgraphviz
-  version: 2.16.0
+  version: 2.18.0
 source:
-  fn: Rgraphviz_2.16.0.tar.gz
-  url: https://bioarchive.galaxyproject.org/Rgraphviz_2.16.0.tar.gz
-  md5: 7cc78d664091137d805709970cb00879
+  fn: Rgraphviz_2.18.0.tar.gz
+  url: https://bioarchive.galaxyproject.org/Rgraphviz_2.18.0.tar.gz
+  md5: 63068b63cabe69c315c1b2f60eb7b197
 build:
   number: 0
   rpaths:
@@ -14,12 +14,11 @@ requirements:
   build:
     - bioconductor-graph
     - r
-    - gcc  # [not osx]
-    - llvm  # [osx]
+    - gcc
   run:
     - bioconductor-graph
     - r
-    - libgcc  # [not osx]
+    - libgcc
 test:
   commands:
     - '$R -e "library(''Rgraphviz'')"'
