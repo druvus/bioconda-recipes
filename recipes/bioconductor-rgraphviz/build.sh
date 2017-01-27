@@ -6,7 +6,6 @@ export LD_LIBRARY_PATH=${PREFIX}/lib
 mv DESCRIPTION DESCRIPTION.old
 grep -v '^Priority: ' DESCRIPTION.old > DESCRIPTION
 #
-export LD_LIBRARY_PATH=${PREFIX}/graphviz
 $R CMD INSTALL --build  .
 #
 # # Add more build steps here, if they are necessary.
