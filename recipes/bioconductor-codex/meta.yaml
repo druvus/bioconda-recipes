@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-codex
+  version: 1.6.0
+source:
+  fn: CODEX_1.6.0.tar.gz
+  url: https://bioarchive.galaxyproject.org/CODEX_1.6.0.tar.gz
+  md5: ebfab9d476741d01c950b672e598afa8
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - bioconductor-biostrings
+    - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - bioconductor-genomeinfodb
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r
+  run:
+    - bioconductor-biostrings
+    - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - bioconductor-genomeinfodb
+    - bioconductor-iranges
+    - bioconductor-rsamtools
+    - bioconductor-s4vectors
+    - r
+test:
+  commands:
+    - '$R -e "library(''CODEX'')"'
+about:
+  home: http://bioconductor.org/packages/release/bioc/html/CODEX.html
+  license: GPL-2
+  summary: 'A normalization and copy number variation calling procedure for whole
+    exome DNA sequencing data. CODEX relies on the availability of multiple samples
+    processed using the same sequencing pipeline for normalization, and does not require
+    matched controls. The normalization model in CODEX includes terms that specifically
+    remove biases due to GC content, exon length and targeting and amplification efficiency,
+    and latent systemic artifacts. CODEX also includes a Poisson likelihood-based
+    recursive segmentation procedure that explicitly models the count-based exome
+    sequencing data.'
