@@ -1,10 +1,10 @@
 package:
   name: scoary
-  version: "1.6.9"
+  version: "1.6.10"
 
 source:
-  fn: v1.6.9.tar.gz
-  url: https://github.com/AdmiralenOla/Scoary/archive/v1.6.9.tar.gz
+  fn: v1.6.10.tar.gz
+  url: https://github.com/AdmiralenOla/Scoary/releases/download/v1.6.10/scoary-1.6.10.tar.gz
 
 build:
   entry_points:
