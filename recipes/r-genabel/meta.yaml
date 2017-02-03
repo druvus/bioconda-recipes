@@ -1,0 +1,70 @@
+{% set name = 'GenABEL' %}
+{% set version = '1.8-0' %}
+
+package:
+  name: r-{{ name|lower }}
+  version: {{ version|replace("-", "_") }}
+
+source:
+  fn: {{ name }}_{{ version }}.tar.gz
+  url:
+    - https://cran.r-project.org/src/contrib/{{ name }}_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz
+  md5: ea0525a99131c3e3924cdc8106694114
+
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r
+    - r-genabel.data
+    - r-mass
+    - gcc  # [not osx]
+    - llvm  # [osx]
+
+  run:
+    - r
+    - r-genabel.data
+    - r-mass
+    - libgcc  # [osx]
+
+test:
+  commands:
+    - $R -e "library('GenABEL')"
+
+about:
+  home: http://www.genabel.org, http://forum.genabel.org, http://genabel.r-forge.r-project.org/
+  license: GPL (>= 2)
+  summary: 'a package for genome-wide association analysis between  quantitative or binary traits
+    and single-nucleotide polymorphisms (SNPs). '
+
+  license_family: GPL3
+
+# The original CRAN metadata for this package was:
+
+# Package: GenABEL
+# Type: Package
+# Title: genome-wide SNP association analysis
+# Version: 1.8-0
+# Date: 2013-12-09
+# Author: GenABEL project developers
+# Contact: GenABEL project developers <genabel.project at gmail.com>
+# Maintainer: Yurii Aulchenko <yurii@bionet.nsc.ru>
+# Depends: R (>= 2.15.0), methods, MASS, utils, GenABEL.data
+# Suggests: qvalue, genetics, haplo.stats, DatABEL (>= 0.9-0), hglm, MetABEL, PredictABEL, VariABEL, bigRR
+# Description: a package for genome-wide association analysis between  quantitative or binary traits and single-nucleotide polymorphisms (SNPs).
+# License: GPL (>= 2)
+# URL: http://www.genabel.org, http://forum.genabel.org, http://genabel.r-forge.r-project.org/
+# BugReports: http://r-forge.r-project.org/tracker/?group_id=505
+# Packaged: 2013-12-26 05:48:08 UTC; maksim
+# NeedsCompilation: yes
+# Repository: CRAN
+# Date/Publication: 2013-12-27 14:47:02
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
