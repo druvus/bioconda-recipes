@@ -7,7 +7,6 @@ source:
   md5: 3b763aedfb1ea1004141194f917432ef
 build:
   number: 0
-  skip: True # [osx]
   rpaths:
     - lib/R/lib/
     - lib/
