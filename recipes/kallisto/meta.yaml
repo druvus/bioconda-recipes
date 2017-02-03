@@ -8,7 +8,6 @@ package:
 build:
     number: 2
     string: hdf5{{CONDA_HDF5}}_{{PKG_BUILDNUM}}
-    skip: True # [osx]
 requirements:
     build:
         - hdf5 {{CONDA_HDF5}}
