@@ -31,8 +31,7 @@ requirements:
     - r-r.utils
     - r-rcpp
     - r-kernsmooth
-    - gcc  # [not osx]
-    - llvm  # [osx]
+    - gcc
   run:
     - bioconductor-fastseg
     - bioconductor-genomeinfodb
@@ -53,7 +52,7 @@ requirements:
     - r-r.utils
     - r-rcpp
     - r-kernsmooth
-    - libgcc  # [not osx]
+    - libgcc 
 test:
   commands:
     - '$R -e "library(''methylKit'')"'
