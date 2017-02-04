@@ -4,7 +4,7 @@ package:
 source:
   fn: biomformat_1.0.2.tar.gz
   url: https://depot.galaxyproject.org/software/bioconductor-biomformat/bioconductor-biomformat_1.0.2_src_all.tar.gz
-  md5: 771fa8ee90c441939d4abbc40011b8b1
+  md5: b0d4cfb9b094e21fc6582eed126d0ca6
 build:
   number: 1
   rpaths:
