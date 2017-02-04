@@ -3,7 +3,7 @@ package:
   version: 1.0.2
 source:
   fn: biomformat_1.0.2.tar.gz
-  url: http://bioconductor.org/packages/release/bioc/src/contrib/biomformat_1.0.2.tar.gz
+  url: https://depot.galaxyproject.org/software/bioconductor-biomformat/bioconductor-biomformat_1.0.2_src_all.tar.gz
   md5: 771fa8ee90c441939d4abbc40011b8b1
 build:
   number: 1
