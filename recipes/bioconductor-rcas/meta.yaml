@@ -30,10 +30,9 @@ requirements:
     - r-data.table
     - 'r-dt >=0.2'
     - 'r-knitr >=1.12.3'
-    - r-motifrg,
+    - bioconductor-motifrg
     - 'r-plotly >=4.5.2'
     - 'r-rmarkdown >=0.9.5'
-    - r-stats
     - pandoc >=1.12.3
   run:
     - bioconductor-annotationdbi
@@ -53,10 +52,9 @@ requirements:
     - r-data.table
     - 'r-dt >=0.2'
     - 'r-knitr >=1.12.3'
-    - r-motifrg,
+    - bioconductor-motifrg
     - 'r-plotly >=4.5.2'
     - 'r-rmarkdown >=0.9.5'
-    - r-stats
     - pandoc >=1.12.3
 
 test:
