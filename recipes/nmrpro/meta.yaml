@@ -13,12 +13,12 @@ requirements:
     - setuptools
     - numpy
     - scipy
-    - nmrglue>=0.5
+    - nmrglue >=0.5
   run:
     - python
     - numpy
     - scipy
-    - nmrglue>=0.5
+    - nmrglue >=0.5
 test:
   imports:
     - nmrpro
