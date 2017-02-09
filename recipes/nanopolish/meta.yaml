@@ -28,9 +28,6 @@ requirements:
 
   run:
   - libgcc
-  - fast5
-  - htslib <1.3
-  - hdf5
   - python
   - biopython
   - eigen 
