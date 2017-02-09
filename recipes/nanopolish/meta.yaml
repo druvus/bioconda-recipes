@@ -20,14 +20,14 @@ requirements:
   build:
   - gcc
   - fast5
-  - htslib
+  - htslib <1.3
   - hdf5
   - eigen
 
   run:
   - libgcc
   - fast5
-  - htslib
+  - htslib <1.3
   - hdf5
   - python
   - biopython
