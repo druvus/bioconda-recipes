@@ -29,13 +29,14 @@ requirements:
   run:
   - libgcc
   - python
+  - hdf5
   - biopython
   - eigen 
   - ncurses {{CONDA_NCURSES}}*
 
 test:
   commands:
-    - nanopolish --help  2>&1 | grep usage 
+    - nanopolish --help  #2>&1 | grep usage 
 
 about:
   home: https://github.com/jts/nanopolish
