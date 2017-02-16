@@ -1,0 +1,40 @@
+{% set name = "mauvealigner" %}
+{% set version = "2.4.1a0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+  string: boost{{CONDA_BOOST}}_{{PKG_BUILDNUM}}
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/druvus/mauve_snapshot/raw/master/mauvealigner-code-4736-snapshot.tar.gz
+  md5: c7e03f23901498e194ba6cf1f599782f
+
+requirements:
+  build:
+  - gcc  # [not osx]
+  - llvm  # [osx]
+  - autoconf 
+  - automake
+  - perl
+  - libtool
+  - pkgconfig
+  - boost  {{CONDA_BOOST}}*
+
+  run:
+  - libgcc  # [not osx]
+  - boost  {{CONDA_BOOST}}*
+
+test:
+  commands:
+    - mauveAligner 2>&1 | grep 'Supported alignment output formats'
+    - progressivemauve  2>&1 | grep 'progressiveMauve usage'
+
+about:
+  home: http://darlinglab.org/mauve/
+  license: GPLv2
+  summary: 'mauveAligner and progressiveMauve command-line programs.'
