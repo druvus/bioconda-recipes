@@ -1,0 +1,11 @@
+--- Makefile	2017-02-18 08:51:04.000000000 +0100
++++ Makefile	2017-02-18 08:51:54.000000000 +0100
+@@ -13,7 +13,7 @@
+ CXXFLAGS    ?= -Wall -Wextra -pedantic -march=native
+ 
+ # These flags are required for the build to work.
+-FLAGS        = -std=c++14 -Iunicycler/include -fPIC
++FLAGS        = -std=c++1y -Iunicycler/include -fPIC
+ LDFLAGS      = -shared -lz
+ 
+ # Different debug/optimisation levels for debug/release builds.
