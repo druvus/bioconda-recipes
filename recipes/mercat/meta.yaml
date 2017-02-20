@@ -1,0 +1,57 @@
+{% set name = "mercat" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  skip: True  # [not py27]
+  number: 0
+  entry_points:
+    - mercat=mercat.mercat:mercat_main
+
+source:
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  url: https://github.com/pnnl/mercat/archive/0.1.tar.gz
+  md5: bce67a7bcb58c8daed4a00b377dad097
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - scikit-bio
+    - dask
+    - pandas
+    - numpy
+    - humanize
+    - plotly
+    - psutil
+    - joblib
+    - prodigal
+    - trimmomatic
+
+  run:
+    - libgcc  # [not osx]
+    - python
+    - setuptools
+    - scikit-bio
+    - dask
+    - pandas
+    - numpy
+    - humanize
+    - plotly
+    - psutil
+    - joblib
+    - prodigal
+    - trimmomatic
+
+test:
+  commands:
+    - mercat --help
+
+about:
+  home: https://github.com/pnnl/mercat
+  license: BSD
+  license_file: LICENSE.txt
+  summary: 'MerCat: python code for versatile k-mer counting and diversity estimation for database independent property analysis for meta -ome data'
