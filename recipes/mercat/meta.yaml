@@ -20,6 +20,8 @@ requirements:
   build:
     - python
     - setuptools
+    - scipy
+    - numpy
     - scikit-bio
     - dask
     - pandas
@@ -35,6 +37,8 @@ requirements:
     - libgcc  # [not osx]
     - python
     - setuptools
+    - scipy
+    - numpy
     - scikit-bio
     - dask
     - pandas
