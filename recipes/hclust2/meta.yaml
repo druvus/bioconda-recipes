@@ -1,0 +1,44 @@
+{% set name = "hclust2" %}
+{% set version = "0.99a" %}
+{% set md5 = "f69c6685bcc1737ed83c27c08d93d174" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://bitbucket.org/nsegata/hclust2/get/3d589ab.tar.bz2
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  md5: {{ md5 }}
+
+build:
+    number: 0
+    skip: True  # [not py27]
+
+requirements:
+    build:
+        - python
+        - setuptools
+        - numpy
+        - matplotlib
+        - scipy
+        - pandas
+
+    run:
+        - python
+        - numpy
+        - matplotlib
+        - scipy
+        - pandas
+
+test:
+  commands:
+    - hclust2.py -h
+
+  imports: 
+    - hclust2
+
+about:
+  home: https://bitbucket.org/nsegata/hclust2
+  license: Other
+  summary: 'Hclust2 is a handy tool for plotting heat-maps with several useful options to produce high quality figures that can be used in publication.'
