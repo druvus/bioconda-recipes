@@ -1,0 +1,35 @@
+#Based on conda recipe in the MentaLLiST git repository
+{% set name = "mentalist" %}
+{% set version = "0.1.1" %}
+{% set hash = "d68204ae50b01b03c06536b3d70c3a00729b2603bcba91369b2b0e957a0543aa" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/WGS-TB/MentaLiST/archive/v{{ version }}.tar.gz
+  fn: {{ name|lower }}_{{ version }}.tar.gz
+  sha256: {{ hash }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - julia
+    - hdf5
+
+  run:
+    - julia
+    - hdf5
+
+test:
+  commands:
+    - MentaLiST.jl -h 
+
+about:
+  home: https://github.com/WGS-TB/MentaLiST
+  license: MIT
+  license_file: LICENSE
+  summary: 'The MLST pipeline developed by the PathOGiST research group'
