@@ -1,16 +1,16 @@
+{% set version = "1.2.3.2" %}
+
 package:
   name: clark
-  version: "1.2.3.1"
+  version: {{ version }}
 
 build:
   number: 0
 
 source:
-  fn: CLARKV1.2.3.1.tar.gz
-  url: http://clark.cs.ucr.edu/Download/CLARKV1.2.3.1.tar.gz
-  md5: 13dd19b26c41cdf9554979145543fc15
-  patches:
-    - 0001-support-longer-filenames.patch
+  fn: CLARK_{{ version }}.tar.gz
+  url: http://clark.cs.ucr.edu/Download/CLARKV{{ version }}.tar.gz
+  sha256: e41637273281d9a554c4afb7ab8e3e77534db085097f30e1210932b90ae867de
 
 requirements:
   build:
@@ -31,4 +31,3 @@ about:
   license: GPL3
   license_file: LICENSE_GNU_GPL.txt
   summary: Fast, accurate and versatile k-mer based classification system
-
