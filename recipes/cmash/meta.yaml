@@ -1,0 +1,49 @@
+{% set version = "0.2.0" %}
+
+package:
+  name: cmash
+  version: {{ version }}
+
+source:
+  fn: cmash-{{ version }}.tar.gz
+  url: https://github.com/dkoslicki/CMash/archive/40b755af50d608095ce0bca293f37ab13511931e.tar.gz
+  sha256: ebd64981b0c54574dc83b80edc4bd629ab32d500446efb7d063f666d59a7758c
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - khmer >=2.1.1
+    - screed
+    - h5py
+    - numpy
+    - blist
+    - argparse
+    - pandas
+    - six
+    - scipy
+
+  run:
+    - python
+    - khmer >=2.1.1
+    - screed
+    - h5py
+    - numpy
+    - blist
+    - argparse
+    - pandas
+    - six
+    - scipy
+
+test:
+    commands:
+      - MakeDNADatabase.py --help
+      - QueryDNADatabase.py --help
+
+about:
+  home: https://github.com/dkoslicki/CMash
+  license: BSD-3-Clause
+  summary: Fast and accurate set similarity estimation via containment min hash
