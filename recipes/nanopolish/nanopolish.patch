@@ -1,17 +1,21 @@
---- Makefile	2017-07-01 15:51:35.000000000 +0200
-+++ Makefile	2017-07-01 15:53:16.000000000 +0200
-@@ -46,11 +46,8 @@
+--- Makefile	2017-11-04 08:50:19.000000000 +0100
++++ Makefile	2017-11-04 08:51:36.000000000 +0100
+@@ -46,14 +46,10 @@
  endif
- 
+
  # Build and link the libhts submodule
 -HTS_LIB=./htslib/libhts.a
 -HTS_INCLUDE=-I./htslib
- 
+
  # Include the header-only fast5 library
--FAST5_INCLUDE=-I./fast5/src
- 
+-FAST5_INCLUDE=-I./fast5/include
+
+ # Include the header-only eigen library
+-EIGEN_INCLUDE=-I./eigen/
+
  # Include the src subdirectories
  NP_INCLUDE=$(addprefix -I./, $(SUBDIRS))
+
 --- src/nanopolish_methyltrain.cpp	2017-07-01 15:55:34.000000000 +0200
 +++ src/nanopolish_methyltrain.cpp	2017-07-01 15:54:06.000000000 +0200
 @@ -42,7 +42,7 @@
