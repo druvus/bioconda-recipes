@@ -1,0 +1,45 @@
+{% set version = "0.1.4" %}
+
+package:
+  name: nanopack
+  version: {{ version }}
+
+source:
+  fn: nanopack-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/n/nanopack/nanopack-{{ version }}.tar.gz
+  sha256: 7a43f7377bf4a0b5ce94c7899bd4adc3938d32b136138bb5ffe31eff9e7ef63a
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - nanoplot >=0.20.1
+    - nanostat >=0.6.1
+    - nanofilt >=1.5.2
+    - nanolyse >=0.2.1
+    - nanoget >=0.15.0
+    - nanomath >=0.13.3
+    - nanoplotter >=0.16.5
+
+  run:
+    - python
+    - nanoplot >=0.20.1
+    - nanostat >=0.6.1
+    - nanofilt >=1.5.2
+    - nanolyse >=0.2.1
+    - nanoget >=0.15.0
+    - nanomath >=0.13.3
+    - nanoplotter >=0.16.5
+
+test:
+  imports:
+    - nanopack
+
+about:
+  home: https://github.com/wdecoster/nanopack
+  license: MIT License
+  summary: 'Install all Oxford Nanopore scrips and modules for processing and analysis'
+  license_family: MIT
