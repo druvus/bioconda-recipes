@@ -2195,7 +2195,6 @@ recipes/perl-b-hooks-endofscope/0.21
 recipes/perl-bio-gff3
 recipes/perl-html-treebuilder-xpath
 recipes/perl-soap-lite
-recipes/perl-role-tiny
 recipes/perl-cpan-meta-check
 recipes/perl-class-method-modifiers
 recipes/perl-inline
@@ -2472,7 +2471,6 @@ recipes/ntcard
 recipes/ocrad/0.21
 recipes/panoct
 recipes/perl-aceperl
-recipes/perl-devel-globaldestruction
 recipes/perl-mailtools
 recipes/perl-env-path
 recipes/perl-estscan1/1.3
