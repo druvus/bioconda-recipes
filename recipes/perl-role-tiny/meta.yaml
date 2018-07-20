@@ -1,29 +1,33 @@
+{% set name = "perl-role-tiny" %}
+{% set version = "2.000006" %}
+{% set sha256 = "cc73418c904a0286ecd8915eac11f5be2a8d1e17ea9cb54c9116b0340cd3e382" %}
+
 package:
-  name: perl-role-tiny
-  version: "2.000001"
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.000001.tar.gz
-  md5: f350f1f8c13652bf85da172380b39ec8
+  url: https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.000006.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   host:
     - perl
-    - perl-test-fatal
+    - perl-exporter
 
   run:
     - perl
+    - perl-exporter
 
 test:
-  # Perl 'use' tests
   imports:
     - Role::Tiny
     - Role::Tiny::With
 
 about:
-  home: http://metacpan.org/pod/Role-Tiny
+  home: http://metacpan.org/pod/Role::Tiny
   license: perl_5
   summary: 'Roles. Like a nouvelle cuisine portion size slice of Moose.'
