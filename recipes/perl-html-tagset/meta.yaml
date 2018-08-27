@@ -25,6 +25,6 @@ test:
     - HTML::Tagset
 
 about:
-  home: http://metacpan.org/pod/HTML-Tagset
+  home: http://metacpan.org/pod/HTML::Tagset
   license: unknown
   summary: 'data tables useful in parsing HTML'
