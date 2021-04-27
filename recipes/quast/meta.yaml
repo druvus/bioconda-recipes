@@ -34,7 +34,7 @@ requirements:
     - matplotlib-base
     - joblib
     - simplejson
-    - blast
+    - blast >=2.11
     - zlib
     - glimmerHMM
     - circos
@@ -46,7 +46,7 @@ requirements:
     - openjdk >=8
     - joblib
     - simplejson
-    - blast
+    - blast >=2.11
     - zlib
     - glimmerHMM
     - circos
